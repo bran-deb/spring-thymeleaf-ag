@@ -23,7 +23,7 @@ public class IndexController {
     private String textoListar;
 
     //        @RequestMapping(value = "/index",method = RequestMethod.GET)
-    @GetMapping({"/", ""})
+    @GetMapping({"/", "", "/index"})
     public String index(Model model) {
         model.addAttribute("titulo", textoIndex);
         return "index";
