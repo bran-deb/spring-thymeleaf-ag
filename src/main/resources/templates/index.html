@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1 class="color-rojo" th:text="${titulo}"></h1>
+
+<table th:if="${not usuariosList.isEmpty()}">
+    <thead>
+    <tr class="color-azul">
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="usuario: ${usuariosList}">
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.apellido}"></td>
+        <td th:text="${usuario.email}"></td>
+    </tr>
+    </tbody>
+</table>
+<img class="size-image" th:src="@{/images/spring-boot-logo.png}"/>
+</body>
+</html>
